@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: sans-serif;
+      padding: 5px;
+      background: #f1f1f1;
+    }
+    
+    
+    
+    /* Style the top navigation bar */
+    .topnav {
+      font-size: 10px;
+    background-color:white;
+      width:70%;
+      height: 50px;
+      padding-left: 100px;
+      padding-top: 10px;
+      
+      margin-left:100px
+    }
+
+ /* Style the topnav links */
+    .topnav a {
+        font-size: 15px;
+      display: inline-block;
+      color: black;
+      text-decoration: none;
+        padding-right: 20px;
+      
+    }
+    
+    /* Change color on hover */
+    .topnav a:hover {
+      background-color: #ddd;
+      color:blue;
+    }
+    .topnav:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .flex-container{
+      display:flex;
+      margin-top:20px;
+      margin-left:100px;
+     
+      width:70%;
+      height:250px;
+      box-sizing: border-box;
+      border: 1px solid grey;
+    background: white;
+      padding-left: 50px;
+      padding-top: 25px;
+  }
+  .container{
+      display:flex;
+      margin-top:60px;
+      margin-left:100px;
+      
+      width:70%;
+      height:600px;
+      box-sizing: border-box;
+      border: 1px solid grey;
+    background: white;
+      padding-left: 50px;
+      padding-top: 25px;
+  }
+    
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn { 
+    
+      float: left;
+      width: 18.55%;
+    }
+    /* Right column */
+    .rightcolumn {
+       
+        float: right;
+        width: 81.45%;
+        background-color: #f1f1f1;
+        padding-left: 20px;
+    }
+      /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+    .aside {
+    width: 250px;
+    height:500px;
+    padding-left: 0px;
+    margin-left: 80px;
+    font-style: italic;
+    background-color: lightgray;
+    overflow:scroll;
+    }
+    .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    background: white;
+    line-height: 0.5;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    
+    }
+    .card1{
+    padding-top:30px;
+    margin:auto;
+    text-align: center;
+    font-family: arial;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background: white;
+
+    }
+
+
+
+
+a{
+    text-decoration: none;
+    font-size: 22px;
+    color:  grey;
+}
+    .box1{
+    line-height: 0.8;
+    padding-top:10px;
+    border:none;
+    padding-right:50px;
+    text-align:center;
+    
+    }
+    .profile{
+      
+        padding-left:120px;
+    }
+    .aboutme{
+        
+        border: 1px solid grey;
+        height:200px;
+        margin-right:40px;
+    }
+    .column1{
+       
+        float:left;
+        width:40%;
+        height:200px;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        }
+        .column2{
+            float:right;
+            width:60%;
+        
+    }
+    .boxes1{
+        margin-top: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-bottom-style: solid;
+        border-bottom-color:lightblue;
+        width:150px;
+        height:150px;
+        
+    }
+    .boxes2{
+        margin-top: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-bottom-style: solid;
+        border-bottom-color:red;
+        width:150px;
+        height:150px;
+    }
+    .boxes3{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+        border-bottom-style: solid;
+        border-bottom-color: yellow;
+        width:150px;
+        height:150px;
+
+    }
+    .boxes4{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin-top: 20px;
+        border-bottom-style: solid;
+        border-bottom-color: cadetblue;
+        width:150px;
+        height:150px;
+        
+    }
+    table {
+    margin-left: 30px;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    }
+
+    td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    }
+ /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+      }
+    }
+    
+    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+    @media screen and (max-width: 400px) {
+      .topnav a {
+        float: none;
+        width: 100%;
+      }
+    }
+    </style>
+    </head>
+    <body>
+    <div class="row">
+      <div class="leftcolumn">
+       <div class="aside">
+        <div class="card">
+            <img src="images/amma.jpg" style="width:100%;">
+            <h3>Amma Waston</h3>
+            <p class="title">Actress</p>
+            <p>Harvard University</p>
+        </div>
+            <div class="card1">
+               <a href="#"><i class="fa fa-dribbble"></i></a> 
+              <a href="#"><i class="fa fa-twitter"></i></a>  
+              <a href="#"><i class="fa fa-linkedin"></i></a>  
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <h3>What is in my mind?</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid deleniti perspiciatis quis ut quisquam esse aspernatur, exercitationem at provident doloremque impedit sequi minima voluptas accusamus doloribus totam necessitatibus aperiam numquam.</p>
+              </div>
+            </div>
+           
+          </div>
+        <div class="rightcolumn">
+        
+    <div class="topnav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Skill</a>
+        <a href="#">Education</a>
+        <a href="#">Protofoilio</a>
+        <a href="#">Testimoerial</a>
+        <a href="#">Experience</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="flex-container">
+       <div class="box1">
+           <h1>Hello.</h1>
+           <h3>My name is Ashely</h3>
+           <p>&I am asolutely design addicted</p>
+           
+           <button style="font-size:15px;background: lightblue;width:150px;height:50px"> <i class="fa fa-image"> View Profile</i></button>
+        </div>
+            <div class="profile">
+               <img src="images/amma.jpg" style="width:200px;height:200px;border-radius: 100px;">
+           </div>
+          </div>
+          <div class="container">
+              <div class="row">
+              <div class="aboutme">
+              <h2>About Me</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae labore impedit optio et quisquam, adipisci totam magni aperiam sint nam, iusto, deserunt vitae. Aliquam possimus libero sed? Facilis, rem sed!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae labore impedit optio et quisquam, adipisci totam magni aperiam sint nam, iusto, deserunt vitae. Aliquam possimus libero sed? Facilis, rem sed!</p>
+            </div>
+            <div class="column1">
+                <div class="boxes1">
+               <h4>Logodesign</h4>
+                </div>
+                <div class="boxes2">
+               <h4>Webiste</h4>
+                </div>
+                <div class="boxes3">
+               <h4>Software</h4>
+                </div>
+                <div class="boxes4">
+               <h4>Applications</h4>
+            </div>
+            </div>
+            <div class="column2">
+                
+<h2>Personal Details</h2>
+
+<table>
+  
+  <tr>
+    <td>FullName</td>
+    <td>:</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Father's Name</td>
+    <td>:</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>:</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>:</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Laughing </td>
+    <td>:</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini</td>
+    <td>:</td>
+    <td>Italy</td>
+  </tr>
+   <tr>
+    <td>Magazzini </td>
+    <td>:</td>
+    <td>Italy</td>
+  </tr>
+</table>
+
+             </div>
+            </div>
+          </div>
+    
+    </div>
+    </div>
+    
+   
+    
+    </body>
+    </html>
+    
