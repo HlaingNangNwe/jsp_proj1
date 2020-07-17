@@ -1,0 +1,55 @@
+Menu(id primary key,name,description)
+Food(id  primary key,name unique,price not null,menu_id foreign key);
+Order(id,sale_date date,qty,food_id,price,totalprice)
+create table Menu(menu_id int not null AUTO_INCREMENT,Name varchar(20),Description varchar(20),primary key(menu_id));
+create table Food(food_id int not null AUTO_INCREMENT,FoodName varchar(20) UNIQUE,Price double not null,
+			menu_id int references menu(menu_id),primary key(food_id));
+create table Order(orderid int not null,Sale_Date date,Qty varchar(20),Price double not null,TotalPrice double,
+			food_id INT references 	Food(food_id),
+			primary key(orderid));
+
+CREATE TABLE ORDERS (
+   ID          INT        NOT NULL AUTO_INCREMENT,
+   SaleDate        date, 
+   qty varchar(20),
+   price     double,
+   totalprice double, 
+   food_id INT references 	Food(food_id),
+   PRIMARY KEY (ID)
+);
+insert into Menu Values('2','Buffet','Today Special'),('3','Ice Cream','Yesterday Menu'),('4','Chocolate','Everyday'),('5','Pizza','Desert');
+insert into Food Values('1','Loterria burger','2000','1'),('2','KFC Burger','2500','1'),('3','Shwe Kaung buffet','30000','2'),('4','Shwe Lar Buffet','20000','2'),
+			('5','Bamboo Buffet','10000','2'),('6','Tango','2000','4'),('7','Dark Choco','3000','4'),('8','White Choco','2500','4'),
+			('9','Brown Choco','1000','4'),('10','Vanilla Ice Cream','1500','3'),('11','Milk IceCream','1500','3'),('12','Cheese Pizza','1000','5'),
+			('13','Jumbo Pizza','2000','5'),('14','Sausage Pizza','2000','5');
+
+insert into ORDERS Values('2','2020.7.1','2','2000','4000','1'),('3','2020.7.10','2','30000','60000','3'),('4','2020.7.8','1','20000','20000','4'),('5','2020.7.5','2','1500','3000','11'),
+				('6','2020.7.4','2','2000','4000','13'),('7','2020.7.8','3','2000','10000','14'),('8','2020.7.2','2','10000','20000','5'),('9','2020.7.5','4','2500','10000','2'),
+				('10','2020.7.11','2','1500','3000','10'),('11','2020.7.11','6','1500','3000','10');
+
+
+Show Maximum Sale Item and minimum sale item
+Show Sale Amount By date 
+Show Total Sale Amount between date;
+select  MAX(ORDERS.totalprice) AS MaximumSale,MIN(ORDERS.totalprice) AS MinimumSale from ORDERS LEFT JOIN Food ON Food.food_id = ORDERs.food_id;
+select ORDERS.SaleDate AS SaleDate,sum(totalprice) AS TotalSale from ORDERS ;
+select sum(totalprice) AS TotalSaleAmount from ORDERS where ORDERS.SaleDate between '2020-7-1' and '2020-7-5';
+select ORDERS.SaleDate AS SaleDate,sum(totalprice) AS SaleAmountByDate from ORDERS GROUP BY SaleDate;
+
+
+SELECT * 
+   FROM FOOD  
+   WHERE food_id IN (SELECT food_id 
+         FROM Food 
+         WHERE price > 2500) ;
+
+SELECT COUNT(food_id), FoodName
+FROM Food
+GROUP BY FoodName
+HAVING COUNT(Food_id) > 5
+ORDER BY COUNT(Food_id) DESC;
+
+
+
+
+
